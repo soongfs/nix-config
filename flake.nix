@@ -17,17 +17,10 @@
     };
   };
 
-  outputs =
-    {
-      nixpkgs,
-      home-manager,
-      nixos-wsl,
-      ...
-    }@inputs:
+  outputs = { nixpkgs, home-manager, nixos-wsl, ... }@inputs:
     let
       system = "x86_64-linux";
-      mkHost =
-        extraModules:
+      mkHost = extraModules:
         nixpkgs.lib.nixosSystem {
           inherit system;
           specialArgs = { inherit inputs; };
@@ -40,14 +33,10 @@
             }
           ];
         };
-    in
-    {
+    in {
       nixosConfigurations = {
-        nixos-tuf = mkHost [ ./host/nixos-tuf ];
-        nixos-wsl = mkHost [
-          nixos-wsl.nixosModules.wsl
-          ./hosts/nixos-wsl
-        ];
+        nixos-tuf = mkHost [ ./hosts/nixos-tuf ];
+        nixos-wsl = mkHost [ nixos-wsl.nixosModules.wsl ./hosts/nixos-wsl ];
       };
     };
 }
