@@ -28,7 +28,8 @@ in {
     enable = true;
     enableZshIntegration = true;
   };
-  home.file.".config/starship".source = "${inputs.dotfiles}/starship";
+  home.file.".config/starship.toml".source =
+    "${inputs.dotfiles}/starship/starship.toml";
 
   programs.zoxide = {
     enable = true;
