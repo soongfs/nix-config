@@ -87,14 +87,34 @@
         "type": "github"
       }
     },
+    "noctalia": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1771241895,
+        "narHash": "sha256-DlOqqnea1WwCzbE9ybkonIS86kjhyTnHOTq+N4Lh8MQ=",
+        "owner": "noctalia-dev",
+        "repo": "noctalia-shell",
+        "rev": "d1d0ff9862d4d3299266af233c1ceb77d1a81fe5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "noctalia-dev",
+        "repo": "noctalia-shell",
+        "type": "github"
+      }
+    },
     "nvim-config": {
       "flake": false,
       "locked": {
-        "lastModified": 1771133464,
-        "narHash": "sha256-zjisfbb7tnms1v3cpdQzfyLSXQ1OvHsT22uNZW8u9jo=",
+        "lastModified": 1771253893,
+        "narHash": "sha256-c05T4MR05K7ptF4lPrJ/0Z/4ZBsQ6FFiZP9XJq9Mbio=",
         "owner": "soongfs",
         "repo": "kickstart.nvim",
-        "rev": "6d6f1dfea83124c5dfc93172f436750b34ebc595",
+        "rev": "8b38887659561d257484087676072925b62c2ef1",
         "type": "github"
       },
       "original": {
@@ -108,6 +128,7 @@
         "home-manager": "home-manager",
         "nixos-wsl": "nixos-wsl",
         "nixpkgs": "nixpkgs_2",
+        "noctalia": "noctalia",
         "nvim-config": "nvim-config"
       }
     }

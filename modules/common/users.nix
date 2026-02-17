@@ -4,7 +4,7 @@
   programs.zsh.enable = true;
   users.users.soongfs = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel" "video" "render" ];
     shell = pkgs.zsh;
   };
 }
