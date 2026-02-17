@@ -1,8 +1,9 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 
 {
   # Terminal Emulator
   programs.alacritty.enable = true;
+  home.file.".config/alacritty".source = "${inputs.dotfiles}/alacritty";
 
   # Input Method
   i18n.inputMethod = {

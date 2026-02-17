@@ -20,6 +20,8 @@
       url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    dotfiles.url = "git+https://codeberg.org/soongfs/dotfiles.git";
   };
 
   outputs = { nixpkgs, home-manager, nixos-wsl, ... }@inputs:

@@ -1,5 +1,20 @@
 {
   "nodes": {
+    "dotfiles": {
+      "locked": {
+        "lastModified": 1771339763,
+        "narHash": "sha256-Y9i3BrfJ9YwlNrRSE0TGkG/2eSCcOVuEPqU2RJnCoHg=",
+        "ref": "refs/heads/master",
+        "rev": "2895e9343a61aa33d2ece70f43696e97c4d79166",
+        "revCount": 1,
+        "type": "git",
+        "url": "https://codeberg.org/soongfs/dotfiles.git"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://codeberg.org/soongfs/dotfiles.git"
+      }
+    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -125,6 +140,7 @@
     },
     "root": {
       "inputs": {
+        "dotfiles": "dotfiles",
         "home-manager": "home-manager",
         "nixos-wsl": "nixos-wsl",
         "nixpkgs": "nixpkgs_2",
