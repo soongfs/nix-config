@@ -22,6 +22,7 @@
     ../../modules/pipewire.nix
     ../../modules/power.nix
     ../../modules/print.nix
+    ../../modules/swap.nix
     ../../modules/touchpad.nix
     ../../modules/unfree.nix
   ];

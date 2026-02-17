@@ -2,11 +2,11 @@
   "nodes": {
     "dotfiles": {
       "locked": {
-        "lastModified": 1771339763,
-        "narHash": "sha256-Y9i3BrfJ9YwlNrRSE0TGkG/2eSCcOVuEPqU2RJnCoHg=",
+        "lastModified": 1771347844,
+        "narHash": "sha256-BQYEP12DRWZV1aj07LOCjEPhfMvPxcPb6NtV6HEw/O0=",
         "ref": "refs/heads/master",
-        "rev": "2895e9343a61aa33d2ece70f43696e97c4d79166",
-        "revCount": 1,
+        "rev": "98d5bf3cfe26823cbf2d66fbd53114ddf4a706c3",
+        "revCount": 3,
         "type": "git",
         "url": "https://codeberg.org/soongfs/dotfiles.git"
       },
@@ -125,11 +125,11 @@
     "nvim-config": {
       "flake": false,
       "locked": {
-        "lastModified": 1771253893,
-        "narHash": "sha256-c05T4MR05K7ptF4lPrJ/0Z/4ZBsQ6FFiZP9XJq9Mbio=",
+        "lastModified": 1771348051,
+        "narHash": "sha256-4OY/S9eW8d27FjnQOixhvYoEppdDwKd0mvqwAzQW9Kw=",
         "owner": "soongfs",
         "repo": "kickstart.nvim",
-        "rev": "8b38887659561d257484087676072925b62c2ef1",
+        "rev": "50a7caa5953997d6936bdc248992699d606d72e6",
         "type": "github"
       },
       "original": {
