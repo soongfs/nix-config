@@ -122,14 +122,14 @@
         "type": "github"
       }
     },
-    "nvim-config": {
+    "nvimConfig": {
       "flake": false,
       "locked": {
-        "lastModified": 1771348051,
-        "narHash": "sha256-4OY/S9eW8d27FjnQOixhvYoEppdDwKd0mvqwAzQW9Kw=",
+        "lastModified": 1771434070,
+        "narHash": "sha256-5YFC4u8MpPCEovw7z16uCioWjnZppD08YVkKkcvubcc=",
         "owner": "soongfs",
         "repo": "kickstart.nvim",
-        "rev": "50a7caa5953997d6936bdc248992699d606d72e6",
+        "rev": "73b6880a05f5bd570be025552e37992f72bf54fd",
         "type": "github"
       },
       "original": {
@@ -145,7 +145,7 @@
         "nixos-wsl": "nixos-wsl",
         "nixpkgs": "nixpkgs_2",
         "noctalia": "noctalia",
-        "nvim-config": "nvim-config"
+        "nvimConfig": "nvimConfig"
       }
     }
   },

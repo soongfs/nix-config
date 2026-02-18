@@ -11,7 +11,7 @@
 
     nixos-wsl.url = "github:nix-community/NixOS-WSL";
 
-    nvim-config = {
+    nvimConfig = {
       url = "github:soongfs/kickstart.nvim";
       flake = false;
     };
@@ -24,10 +24,17 @@
     dotfiles.url = "git+https://codeberg.org/soongfs/dotfiles.git";
   };
 
-  outputs = { nixpkgs, home-manager, nixos-wsl, ... }@inputs:
+  outputs =
+    {
+      nixpkgs,
+      home-manager,
+      nixos-wsl,
+      ...
+    }@inputs:
     let
       system = "x86_64-linux";
-      mkHost = extraModules:
+      mkHost =
+        extraModules:
         nixpkgs.lib.nixosSystem {
           inherit system;
           specialArgs = { inherit inputs; };
@@ -40,10 +47,14 @@
             }
           ];
         };
-    in {
+    in
+    {
       nixosConfigurations = {
         nixos-tuf = mkHost [ ./hosts/nixos-tuf ];
-        nixos-wsl = mkHost [ nixos-wsl.nixosModules.wsl ./hosts/nixos-wsl ];
+        nixos-wsl = mkHost [
+          nixos-wsl.nixosModules.wsl
+          ./hosts/nixos-wsl
+        ];
       };
     };
 }

@@ -3,17 +3,30 @@
 let
   # CLI Utilities
   cliUtils = with pkgs; {
-    network = [ curl wget gh ];
-    archive = [ unzip ouch ];
-    manual = [ man-pages man-pages-posix ];
-    system = [ fastfetch wl-clipboard ];
+    network = [
+      curl
+      wget
+      gh
+    ];
+    archive = [
+      unzip
+      ouch
+    ];
+    manual = [
+      man-pages
+      man-pages-posix
+    ];
+    system = [
+      fastfetch
+      wl-clipboard
+    ];
   };
 
   # Runtime Libraries
   runtimeLibs = with pkgs; [ glibcLocales ];
-in {
-  home.packages = builtins.concatLists (builtins.attrValues cliUtils)
-    ++ runtimeLibs;
+in
+{
+  home.packages = builtins.concatLists (builtins.attrValues cliUtils) ++ runtimeLibs;
 
   # Shell
   programs.zsh = {
@@ -28,8 +41,7 @@ in {
     enable = true;
     enableZshIntegration = true;
   };
-  home.file.".config/starship.toml".source =
-    "${inputs.dotfiles}/starship/starship.toml";
+  home.file.".config/starship.toml".source = "${inputs.dotfiles}/starship/starship.toml";
 
   programs.zoxide = {
     enable = true;
@@ -55,8 +67,8 @@ in {
     enable = true;
     defaultEditor = true;
   };
-
-  xdg.configFile."nvim".source = inputs.nvim-config;
+  home.file.".config/nvim/init.lua".source = inputs.nvimConfig + "/init.lua";
+  home.file.".config/nvim/lua".source = inputs.nvimConfig + "/lua";
 
   # File Manager
   programs.yazi = {
