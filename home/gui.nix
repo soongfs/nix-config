@@ -24,4 +24,10 @@
     "x-scheme-handler/http" = "firefox.desktop";
     "x-scheme-handler/https" = "firefox.desktop";
   };
+
+  # Thunderbird
+  programs.thunderbird = {
+    enable = true;
+    profiles = { };
+  };
 }
