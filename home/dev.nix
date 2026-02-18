@@ -3,34 +3,16 @@
 let
   # Language Tools
   langTools = with pkgs; {
-    cpp = [
-      gcc
-      gdb
-      clang-tools
-    ];
+    cpp = [ gcc gdb clang-tools ];
     js = [ nodejs ];
     lua = [ lua-language-server ];
-    md = [
-      glow
-      marksman
-      markdownlint-cli2
-      prettier
-    ];
-    nix = [
-      nil
-      nixfmt
-    ];
-    py = [
-      python3
-      uv
-      ty
-      ruff
-    ];
+    md = [ glow marksman markdownlint-cli prettier ];
+    nix = [ nil nixfmt ];
+    py = [ python3 uv ty ruff ];
     rs = [ rustup ];
     misc = [ tree-sitter ];
   };
-in
-{
+in {
   home.packages = builtins.concatLists (builtins.attrValues langTools);
 
   # Git
