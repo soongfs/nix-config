@@ -4,6 +4,7 @@ let
   devPackages = with pkgs; [
     gcc
     gdb
+    bash-language-server
     clang-tools
     nodejs
     opencode
@@ -15,11 +16,17 @@ let
     nil
     nixfmt
     python3
+    shfmt
+    stylua
+    taplo
+    typescript-language-server
     uv
     ty
     ruff
     rustup
     tree-sitter
+    vscode-langservers-extracted
+    yaml-language-server
   ];
 in
 {

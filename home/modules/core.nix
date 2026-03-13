@@ -4,12 +4,14 @@ let
   cliPackages = with pkgs; [
     curl
     wget
+    fd
     gh
     unzip
     ouch
     man-pages
     man-pages-posix
     fastfetch
+    ripgrep
     wl-clipboard
     glibcLocales
   ];
