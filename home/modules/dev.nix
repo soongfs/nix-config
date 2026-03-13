@@ -6,6 +6,7 @@ let
     gdb
     clang-tools
     nodejs
+    opencode
     lua-language-server
     glow
     marksman
