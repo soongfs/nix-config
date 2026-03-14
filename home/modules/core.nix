@@ -11,6 +11,7 @@ let
     man-pages
     man-pages-posix
     fastfetch
+    bottom
     ripgrep
   ];
 in
