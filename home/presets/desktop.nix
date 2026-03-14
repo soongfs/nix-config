@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./base.nix
+    ./linux-base.nix
     ../modules/desktop.nix
   ];
 }

@@ -12,8 +12,6 @@ let
     man-pages-posix
     fastfetch
     ripgrep
-    wl-clipboard
-    glibcLocales
   ];
 in
 {

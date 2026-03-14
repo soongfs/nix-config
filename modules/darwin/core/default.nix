@@ -4,9 +4,7 @@
   imports = [
     ./gc.nix
     ./home-manager-user.nix
-    ./locale.nix
-    ./nix-ld.nix
-    ./unfree.nix
-    ./users.nix
+    ./host.nix
+    ./user.nix
   ];
 }
