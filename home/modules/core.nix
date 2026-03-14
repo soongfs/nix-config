@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 
 let
   cliPackages = with pkgs; [
@@ -19,7 +19,7 @@ in
 
   programs.bash = {
     enable = true;
-    initExtra = ''
+    initExtra = lib.optionalString pkgs.stdenv.isLinux ''
       if [[ $- == *i* ]] && command -v fish >/dev/null 2>&1 && [ -z "$FISH_VERSION" ]; then
         exec fish
       fi
@@ -30,6 +30,15 @@ in
     enable = true;
     interactiveShellInit = ''
       set -g fish_greeting
+    '';
+  };
+
+  programs.zsh = lib.mkIf pkgs.stdenv.isDarwin {
+    enable = true;
+    initExtra = ''
+      if [[ -o interactive ]] && command -v fish >/dev/null 2>&1 && [ -z "$FISH_VERSION" ]; then
+        exec fish
+      fi
     '';
   };
 
