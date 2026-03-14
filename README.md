@@ -15,7 +15,7 @@ A structured Nix flake for:
 - `modules/nixos/features/`: composable feature modules
 - `modules/nixos/presets/`: scenario presets (`desktop`, `wsl`)
 - `home/modules/`: composable Home Manager modules
-- `home/presets/`: Home Manager presets (`base`, `linux-base`, `desktop`)
+- `home/presets/`: Home Manager presets (`base`, `linux-base`, `darwin-base`, `desktop`)
 
 ## Build
 
@@ -25,4 +25,27 @@ sudo nixos-rebuild switch --flake .#nixos-wsl
 darwin-rebuild switch --flake .#Soongs-Mac-mini
 ```
 
-`Soongs-Mac-mini` currently uses the shared CLI/dev/editor base only. Desktop-specific modules remain Linux-only.
+`Soongs-Mac-mini` currently uses the shared CLI/dev/editor base plus Colima/Docker tooling and a minimal Forgejo compose stack. Desktop-specific modules remain Linux-only.
+
+## Darwin Containers
+
+`Soongs-Mac-mini` installs `colima`, `docker`, and `docker-compose` through Home Manager.
+
+For Forgejo on macOS:
+
+```sh
+colima start
+forgejo-up
+```
+
+Then open `http://localhost:3000`.
+
+Useful commands:
+
+```sh
+forgejo-ps
+forgejo-logs
+forgejo-down
+```
+
+SSH for Git is exposed on `localhost:2222`.

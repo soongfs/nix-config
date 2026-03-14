@@ -127,7 +127,7 @@
       darwinConfigurations = {
         "Soongs-Mac-mini" = mkDarwinHost {
           name = "Soongs-Mac-mini";
-          homePreset = "base";
+          homePreset = "darwin-base";
           extraModules = [ ./hosts/soongs-mac-mini ];
         };
       };
