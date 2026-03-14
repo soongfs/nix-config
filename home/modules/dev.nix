@@ -1,9 +1,8 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 
 let
-  devPackages = with pkgs; [
+  sharedDevPackages = with pkgs; [
     gcc
-    gdb
     bash-language-server
     clang-tools
     nodejs
@@ -30,7 +29,7 @@ let
   ];
 in
 {
-  home.packages = devPackages;
+  home.packages = sharedDevPackages ++ lib.optionals pkgs.stdenv.isLinux [ pkgs.gdb ];
 
   programs.git = {
     enable = true;
