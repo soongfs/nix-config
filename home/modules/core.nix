@@ -68,5 +68,17 @@ in
   };
 
   programs.lazygit.enable = true;
-  programs.tmux.enable = true;
+
+  programs.tmux = {
+    enable = true;
+    plugins = with pkgs.tmuxPlugins; [
+      resurrect
+      continuum
+      yank
+    ];
+    terminal = "tmux-256color";
+    extraConfig = ''
+      set -as terminal-features ',xterm*:RGB'
+    '';
+  };
 }

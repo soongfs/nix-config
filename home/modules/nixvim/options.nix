@@ -5,6 +5,20 @@
     enable = true;
     defaultEditor = true;
 
+    autoCmd = [
+      {
+        event = [ "FileType" ];
+        pattern = [
+          "c"
+          "cpp"
+          "objc"
+          "objcpp"
+        ];
+        command = "setlocal cindent";
+        desc = "Use C indentation for C-family files";
+      }
+    ];
+
     opts = {
       autoindent = true;
       cursorline = true;
@@ -12,13 +26,13 @@
       mouse = "a";
       number = true;
       relativenumber = true;
-      shiftwidth = 2;
+      shiftwidth = 4;
       signcolumn = "yes";
       smartindent = true;
-      softtabstop = 2;
+      softtabstop = 4;
       splitbelow = true;
       splitright = true;
-      tabstop = 2;
+      tabstop = 4;
       termguicolors = true;
       timeoutlen = 300;
       updatetime = 250;
