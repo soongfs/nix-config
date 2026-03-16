@@ -5,6 +5,23 @@
     enable = true;
     defaultEditor = true;
 
+    extraConfigLua = ''
+      if vim.fn.has("wsl") == 1 then
+        vim.g.clipboard = {
+          name = "WslClipboard",
+          copy = {
+            ["+"] = "clip.exe",
+            ["*"] = "clip.exe",
+          },
+          paste = {
+            ["+"] = 'powershell.exe -NoLogo -NoProfile -Command [Console]::Out.Write($(Get-Clipboard -Raw).ToString().Replace("`r", ""))',
+            ["*"] = 'powershell.exe -NoLogo -NoProfile -Command [Console]::Out.Write($(Get-Clipboard -Raw).ToString().Replace("`r", ""))',
+          },
+          cache_enabled = 0,
+        }
+      end
+    '';
+
     autoCmd = [
       {
         event = [ "FileType" ];
@@ -21,6 +38,7 @@
 
     opts = {
       autoindent = true;
+      clipboard = "unnamedplus";
       cursorline = true;
       expandtab = true;
       mouse = "a";
