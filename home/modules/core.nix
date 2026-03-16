@@ -36,7 +36,7 @@ in
 
   programs.zsh = lib.mkIf pkgs.stdenv.isDarwin {
     enable = true;
-    initExtra = ''
+    initContent = ''
       if [[ -o interactive ]] && command -v fish >/dev/null 2>&1 && [ -z "$FISH_VERSION" ]; then
         exec fish
       fi
