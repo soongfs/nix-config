@@ -6,6 +6,7 @@
     defaultEditor = true;
 
     opts = {
+      autoindent = true;
       cursorline = true;
       expandtab = true;
       mouse = "a";
