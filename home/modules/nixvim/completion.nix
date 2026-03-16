@@ -9,7 +9,7 @@
       enable = true;
       autoEnableSources = true;
       settings = {
-        completion.completeopt = "menu,menuone,noinsert,noselect";
+        completion.completeopt = "menu,menuone,noinsert";
         mapping = {
           __raw = ''
             cmp.mapping.preset.insert({
@@ -37,7 +37,7 @@
             })
           '';
         };
-        preselect = "cmp.PreselectMode.None";
+        preselect = "cmp.PreselectMode.Item";
         snippet.expand = "function(args) require('luasnip').lsp_expand(args.body) end";
         sources = [
           { name = "nvim_lsp"; }
