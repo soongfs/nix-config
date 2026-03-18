@@ -18,6 +18,7 @@ let
     shfmt
     stylua
     taplo
+    texlab
     typescript-language-server
     uv
     ty
