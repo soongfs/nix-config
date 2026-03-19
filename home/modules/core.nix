@@ -34,6 +34,14 @@ in
     '';
   };
 
+  programs.starship = {
+    enable = true;
+    enableBashIntegration = false;
+    enableFishIntegration = true;
+    enableZshIntegration = false;
+    presets = [ "nerd-font-symbols" ];
+  };
+
   programs.zsh = lib.mkIf pkgs.stdenv.isDarwin {
     enable = true;
     initContent = ''
