@@ -5,7 +5,7 @@
 
   programs.fish.enable = true;
 
-  home-manager.users.${username}.systemd.user.startServices = "suggest";
+  home-manager.users.${username}.systemd.user.enable = false;
 
   system.stateVersion = "25.05";
 }
