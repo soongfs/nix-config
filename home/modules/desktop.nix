@@ -1,17 +1,5 @@
-{ inputs, lib, pkgs, ... }:
+{ inputs, pkgs, ... }:
 
-let
-  quickshellWaylandOnly = pkgs.quickshell.overrideAttrs (old: {
-    buildInputs = lib.filter (pkg: lib.getName pkg != "libxcb") (old.buildInputs or [ ]);
-    cmakeFlags =
-      (old.cmakeFlags or [ ])
-      ++ [
-        (lib.cmakeBool "X11" false)
-        (lib.cmakeBool "I3" false)
-        (lib.cmakeBool "I3_IPC" false)
-      ];
-  });
-in
 {
   imports = [ inputs.dms.homeModules.dank-material-shell ];
 
@@ -20,7 +8,7 @@ in
   programs.dank-material-shell = {
     enable = true;
     systemd.enable = true;
-    quickshell.package = quickshellWaylandOnly;
+    quickshell.package = pkgs.quickshell;
   };
 
   i18n.inputMethod = {
